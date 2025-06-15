@@ -29,7 +29,7 @@ Crée les fichiers suivants :
 
 ## 🔐 Configuration de la clé API
 
-Ajoute ta clé API Mistral dans le fichier `.env` :
+Ajoute ta clé API Mistral (à générer sur https://console.mistral.ai/api-keys ) dans le fichier `.env` :
 
 MISTRAL_API_KEY=ta_clé_api_ici
 
