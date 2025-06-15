@@ -11,7 +11,7 @@ Ce guide couvre deux façons d’utiliser l’API Mistral :
 ### 📦 Étapes :
 
 1️⃣ **Créer une clé API Mistral**  
-👉 https://console.mistral.ai  
+👉 [https://console.mistral.ai  ](https://console.mistral.ai/api-keys)
 > Copiez la clé générée (attention : ne jamais la partager)
 
 2️⃣ **Installer l’extension Continue**  
@@ -62,19 +62,14 @@ mistral_chat/
 ├── requirements.txt
 📄 .env
 env
-Copier
-Modifier
+
 MISTRAL_API_KEY=ta_clé_api_ici
 📄 requirements.txt
-txt
-Copier
-Modifier
+
 requests
 python-dotenv
 📄 main.py
-python
-Copier
-Modifier
+
 import os
 import requests
 from dotenv import load_dotenv
@@ -100,10 +95,10 @@ def ask_mistral(prompt):
 
 question = input("Pose une question à Mistral : ")
 print("Réponse :", ask_mistral(question))
+
 ▶️ Lancer le script
 bash
-Copier
-Modifier
+
 python -m venv venv
 source venv/bin/activate      # ou .\venv\Scripts\activate sur Windows
 pip install -r requirements.txt
