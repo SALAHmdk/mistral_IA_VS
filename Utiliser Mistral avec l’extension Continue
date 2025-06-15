@@ -1,0 +1,100 @@
+# 🚀 Guide d’installation – Utiliser Mistral avec l’extension Continue (VS Code / IntelliJ)
+
+Ce guide vous explique comment intégrer les modèles Mistral dans l’extension **Continue** pour bénéficier de l’autocomplétion, du chat et des embeddings alimentés par l’IA.
+
+---
+
+## ✅ Prérequis
+
+- VS Code **ou** un IDE JetBrains (IntelliJ, WebStorm…)
+- Un compte Mistral AI : https://mistral.ai
+- Python ou Node.js si vous souhaitez tester en local (optionnel)
+
+---
+
+## 1️⃣ Récupérer une clé API Mistral
+
+1. Allez sur le [Mistral Dashboard](https://console.mistral.ai/api-keys)  
+2. Connectez-vous ou créez un compte
+3. Générez une clé API :
+   - Pour les modèles `mistral-*`, utilisez `https://api.mistral.ai/v1`
+   - Pour **Codestral**, utilisez `https://codestral.mistral.ai/v1`
+
+> ⚠️ Ne partagez jamais votre clé API publiquement.
+
+---
+
+## 2️⃣ Installer l'extension Continue
+
+### 🔹 Sur VS Code :
+1. Ouvrir la Marketplace
+2. Rechercher **"Continue"** (éditeur : `Continue.dev`)
+3. Cliquer sur **Installer**
+
+Ou en ligne de commande :
+```bash
+code --install-extension Continue.continue
+🔹 Sur JetBrains (IntelliJ, WebStorm…) :
+Allez dans Settings > Plugins
+
+Recherchez Continue
+
+Installez-le et redémarrez l’IDE
+
+Plus d’infos : https://www.continue.dev/
+
+3️⃣ Configurer Mistral comme fournisseur de modèles
+https://docs.continue.dev/customize/model-providers/mistral
+Ouvrez les paramètres de Continue depuis la barre latérale (icône ⚙️)
+
+Cliquez sur “Open Config File”
+
+Ajoutez cette configuration dans .continue/config.json :
+
+{
+  "models": [
+    {
+      "title": "💬 Mistral Large",
+      "provider": "mistral",
+      "model": "mistral-large-latest",
+      "apiKey": "<YOUR_MISTRAL_API_KEY>"
+    }
+  ],
+  "tabAutocompleteModel": {
+    "title": "⚡ Codestral",
+    "provider": "mistral",
+    "model": "codestral-latest",
+    "apiBase": "https://codestral.mistral.ai/v1"
+  },
+  "embeddingsProvider": {
+    "provider": "mistral",
+    "model": "mistral-embed",
+    "apiKey": "<YOUR_MISTRAL_API_KEY>",
+    "apiBase": "https://api.mistral.ai/v1"
+  }
+}
+🔐 Remplacez <YOUR_MISTRAL_API_KEY> par votre propre clé (ou utilisez ${MISTRAL_API_KEY} avec une variable d’environnement).
+
+🔄 Redémarrer Continue
+Après avoir sauvegardé le fichier de configuration :
+
+VS Code : Ctrl+Shift+P → Reload Window
+
+JetBrains : Redémarrez l’IDE ou rechargez Continue
+
+✨ Utilisation
+Tapez Cmd+I (ou Ctrl+I) pour ouvrir Continue
+
+Posez vos questions (chat Mistral)
+
+Profitez de l’autocomplétion avec Codestral
+
+L’extension utilise Mistral pour les embeddings lors de la recherche contextuelle
+
+📚 Documentation officielle
+Continue (config) : https://continue.dev/docs
+
+Mistral API : https://docs.mistral.ai
+
+Intégration Codestral & Embeddings : https://continue.dev/docs/configuration/modelProviders
+
