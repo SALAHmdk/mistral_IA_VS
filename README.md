@@ -12,10 +12,6 @@ mistral_chat/
 ├── requirements.txt # Dépendances Python
 └── USER_GUIDE.md # Ce guide
 
-yaml
-Copier
-Modifier
-
 ---
 
 ## ✅ Étapes d’installation
@@ -27,10 +23,7 @@ Ouvre VS Code et crée un dossier appelé `mistral_chat`.
 ### 2. Créer les fichiers
 
 Crée les fichiers suivants :
-- `main.py`
 - `.env`
-- `requirements.txt`
-- `USER_GUIDE.md`
 
 ---
 
@@ -39,10 +32,6 @@ Crée les fichiers suivants :
 Ajoute ta clé API Mistral dans le fichier `.env` :
 
 MISTRAL_API_KEY=ta_clé_api_ici
-
-yaml
-Copier
-Modifier
 
 > ⚠️ Ne jamais partager ce fichier `.env`. Ajoute-le à `.gitignore` si tu utilises Git.
 
@@ -55,40 +44,17 @@ Modifier
 ```bash
 python -m venv venv
 Active-le :
-
-Windows :
-
-bash
-Copier
-Modifier
 .\venv\Scripts\activate
-Mac/Linux :
 
-bash
-Copier
-Modifier
-source venv/bin/activate
 Installe les dépendances :
-
-bash
-Copier
-Modifier
 pip install -r requirements.txt
+
 ▶️ Exécution du script
 Lance le script principal :
-
-bash
-Copier
-Modifier
 python main.py
+
 Tu pourras taper une question, et Mistral te répondra dans le terminal.
 
-💬 Exemple d’échange
-yaml
-Copier
-Modifier
-Pose une question à Mistral : Qui est Alan Turing ?
-Réponse de Mistral : Alan Turing est un mathématicien britannique considéré comme l’un des pères fondateurs de l’informatique...
 🛠️ Personnalisation
 Change le modèle en remplaçant "mistral-medium" par mistral-small ou mistral-large.
 
